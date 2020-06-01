@@ -11,12 +11,12 @@ api_url=None
 @given(u'I set sample REST API url')
 def step_impl(context):
     global api_url
-    api_url = 'http://jsonplaceholder.typicode.com'
+    api_url = 'https://reqres.in/'
 
 # START POST Scenario
 @given(u'I Set POST posts api endpoint')
 def step_impl(context):
-    api_endpoints['POST_URL'] = api_url+'/posts'
+    api_endpoints['POST_URL'] = api_url+'api/users'
     print('url :'+api_endpoints['POST_URL'])
 
 @when(u'I Set HEADER param request content type as "{header_conent_type}"')
@@ -26,7 +26,10 @@ def step_impl(context, header_conent_type):
 #You may also include "And" or "But" as a step - these are renamed by behave to take the name of their preceding step, so:
 @when(u'Set request Body')
 def step_impl(context):
-    request_bodies['POST']={"title": "foo","body": "bar","userId": "1"}
+    request_bodies['POST']={
+    "name": "morpheus",
+    "job": "leader"
+}
 
 #You may also include "And" or "But" as a step - these are renamed by behave to take the name of their preceding step, so:
 @when(u'Send a POST HTTP request')
