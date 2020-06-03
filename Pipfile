@@ -16,6 +16,11 @@ graphviz = "*"
 gprof2dot = "*"
 pygraphviz = "*"
 pytest-html-profiling = "*"
+jsonpath-rw = "*"
+jsonpath-rw-ext = "*"
+jsonpath-ng = "*"
+pyassert = "*"
+
 
 [requires]
 python_version = "3.7"
