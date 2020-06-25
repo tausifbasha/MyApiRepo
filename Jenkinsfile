@@ -15,7 +15,7 @@ agent
         }
         stage ('Invoke PACT')  {
             steps {
-                build 'pacttest'
+                build job: "pacttest/master", propagate: true, wait: true
             }
         }
         stage('End') {
