@@ -15,7 +15,7 @@ agent
         }
         stage ('Invoke PACT')  {
             steps {
-                build : 'pacttest'
+                build 'pacttest'
             }
         }
         stage('End') {
